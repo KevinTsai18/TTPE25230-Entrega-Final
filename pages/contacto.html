@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwik-E-Mart - Contacto</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="cabecera">
+            <img src="../assets/images/kwikemart_logo-removebg-preview.png" alt="kwik e mart Apu" id="logo-icono">
+            <h1>Kwik-E-Mart</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="../index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="./productos.html">Productos</a>
+            </li>
+            <li>
+                <a href="./resenias.html">Reseñas</a>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+            <li>
+                <a href="./carrito.html">Carrito</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="main-contacto">
+        <h2>Contacto</h2>
+    </main>
+    <section id="contacto" class="container-principal">
+        <h3>¿Necesitas contactarnos? ¡Dejanos acá tu mensaje!</h3>
+        <form action="https://formspree.io/f/xvgbnlqp" method="POST">
+            <label for="nombre">Nombre:
+                <input type="text" name="nombre" id="name" required placeholder="Ingrese su nombre">
+            </label>
+            <label for="email">Email:
+                <input type="email" name="email" id="email" required placeholder="Ingrese su correo electrónico">
+            </label>
+            <label for="mensaje">Mensaje:
+                <textarea name="mensaje" id="mensaje" required placeholder="¡Hola! Quería decirles..." rows="5"
+                    cols="40"></textarea>
+            </label>
+            <input id="boton-envio" type="submit" value="Enviar mensaje">
+        </form>
+
+
+    </section>
+</body>
+
+</html>

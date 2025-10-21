@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-blanco: antiquewhite;
+    --color-naranja: rgb(207, 119, 18);
+    --color-marron: rgb(114, 80, 7);
+    --color-amarillo: rgb(241, 212, 42);
+    --color-rojo: rgb(235, 34, 34);
+    --color-azul: rgb(23, 183, 247);
+    --color-verde: rgb(0, 255, 76);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+
+    body {
+        background-image: url("../assets/images/background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+
+        header {
+            .cabecera {
+                border-bottom: 1px solid black;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 2rem;
+
+                #logo-icono {
+                    height: 100px;
+                    mix-blend-mode: multiply;
+
+                }
+
+                h1 {
+                    color: var(--color-rojo);
+                    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+                }
+            }
+        }
+
+        nav {
+            margin: 2rem auto;
+
+            ul {
+                display: flex;
+                list-style: none;
+                justify-content: center;
+
+                li {
+                    border: 1px solid black;
+                    padding: 0.5rem 4rem;
+                    background-color: var(--color-naranja);
+                    cursor: pointer;
+
+                    a {
+                        text-decoration: none;
+                        color: var(--color-blanco);
+                    }
+                }
+
+                li:hover {
+                    background-color: var(--color-blanco);
+
+                    a {
+                        color: var(--color-marron);
+                    }
+                }
+
+                li:first-child {
+                    border-bottom-left-radius: 1rem;
+                    border-top-left-radius: 1rem;
+                }
+
+                li:last-child {
+                    border-bottom-right-radius: 1rem;
+                    border-top-right-radius: 1rem;
+                }
+
+            }
+        }
+
+        main {
+
+            background-repeat: no-repeat;
+            height: 20rem;
+            background-size: cover;
+
+            h2 {
+                padding-left: 2rem;
+                font-size: 50px;
+                position: absolute;
+                top: 45%;
+                color: var(--color-amarillo);
+                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+            }
+        }
+
+        #main-inicio {
+            background-image: url("../assets/images/kwik\ e\ mart\ local.jpg");
+            background-position: 0% 20%;
+        }
+
+        #main-productos {
+            background-image: url("../assets/images/productos\ kwik-e-mart.jfif");
+            background-position: 45%;
+        }
+
+        #main-resenias {
+            background-image: url("../assets/images/apu\ sad.JPG");
+            background-position: 0% 20%;
+        }
+
+        #main-contacto {
+            background-image: url("../assets/images/simpsons-moe.webp");
+            background-position: 0% 20%;
+        }
+
+        #main-carrito {
+            background-image: url("../assets/images/apu\ mostrador.JPG");
+            background-position: 0% 50%;
+        }
+
+        .container-principal {
+            background-color: var(--color-blanco);
+            width: 99.5%;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: ridge;
+            border-color: var(--color-azul);
+            text-align: center;
+            padding-bottom: 2rem;
+
+            h3 {
+                font-size: 25px;
+                color: var(--color-amarillo);
+                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+            }
+
+            .product {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+                gap: 1.5rem;
+                padding: 0 2rem;
+                justify-items: center;
+
+                .card {
+                    border: 1px solid black;
+                    width: 100%;
+                    border-radius: 0.5rem;
+                    background-color: var(--color-naranja);
+                    box-shadow: 0 8px 4px gray;
+                    padding: 0.5rem;
+                    transition: all 0.3s ease-in-out;
+                    transition: transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+
+                    a {
+                        text-decoration: none;
+                        color: var(--color-marron);
+
+
+                        h4 {
+                            font-size: 1.2rem;
+                        }
+
+                        img {
+                            width: 100%;
+                            border-radius: 0.5rem;
+                            margin: 0.5rem auto;
+                        }
+
+                        p {
+                            span {
+                                font-weight: 700;
+                                padding: 0.25rem;
+                                background-color: wheat;
+                                border-radius: 0.25rem;
+                            }
+                        }
+                    }
+
+                    button {
+                        margin: 0.5rem;
+                        padding: 0.5rem 1rem;
+
+                        border-radius: 0.5rem;
+                        background-color: var(--color-blanco);
+                        color: var(--color-marron);
+                        cursor: pointer;
+                        font-weight: bolder;
+                        border-color: var(--color-verde);
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
+                        box-shadow: 0 8px 8px gray;
+
+                        img {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+
+            form {
+                margin-right: 5rem;
+                display: grid;
+                grid-template-columns: 150px 1fr;
+                gap: 10px 20px;
+
+                label {
+                    display: contents;
+                    margin-bottom: 0.5rem;
+
+                    input {
+                        min-width: 10rem;
+                    }
+                }
+            }
+
+            .reviews {
+                .review-card {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+                    p {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
