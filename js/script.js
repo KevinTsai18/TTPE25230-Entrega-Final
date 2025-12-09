@@ -18,6 +18,7 @@ function agregarBotonDinamico() {
         // event.preventDefault
         button.addEventListener('click', () => {
             const product = {
+                id: card.dataset.id,
                 title: productTitle,
                 price: productPrice,
                 count: 1
@@ -39,7 +40,33 @@ function agregarBotonDinamico() {
 
 }
 
+function activarBotonesEliminar() {
+    const botones = document.querySelectorAll(".btn-eliminar");
 
+    botones.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+
+            const fila = e.target.closest("tr");
+            const id = fila.dataset.id;
+
+            // 1. Filtrar el carrito
+            cart = cart.filter(p => p.id != id);
+
+            // 2. Recalcular precio total
+            totalPrice = cart.reduce((acc, p) => acc + parseFloat(p.price) * p.count, 0);
+
+            // 3. Guardar en localStorage
+            localStorage.setItem("productos", JSON.stringify(cart));
+            localStorage.setItem("total", totalPrice.toString());
+
+            // 4. Actualizar contador
+            document.querySelector('.count').textContent = cart.length;
+
+            // 5. Eliminar fila
+            fila.remove();
+        });
+    });
+}
 
 function handleCart() {
     // Usamos la funcion para traer la info de local storage y usarlo en la otra pagina para generar la tabla dinamica
@@ -65,7 +92,7 @@ function handleCart() {
         let cuerpo = "<tbody>";
         cart.forEach(producto => {
             cuerpo += `
-            <tr>
+            <tr data-id="${producto.id}">
                 <td data-label="Producto">${producto.title}</td>
                 <td data-label="Precio">$${producto.price}</td>
                 <td data-label="Cantidad">${producto.count}</td>
@@ -79,7 +106,7 @@ function handleCart() {
 
         table.innerHTML = encabezado + cuerpo;
         carritoProduct.appendChild(table);
-
+        activarBotonesEliminar();
 
     }
 }
@@ -148,6 +175,7 @@ const printProducts = async (products) => {
         </a>
         <button>Comprar</button>
         `;
+        card.dataset.id = producto.id;
         container.appendChild(card);
     })
 
@@ -202,6 +230,7 @@ const mostrarPagDescripcionProducto = async () => {
             const botonCompra = document.getElementById("boton-compra-descripcion");
             botonCompra.addEventListener("click", () => {
                 const product = {
+                    id: productInfo.id,
                     title: productInfo.title,
                     price: productInfo.price,
                     count: 1

@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+@font-face {
+    font-family: 'Simpsonfont SimpsonfontSimpsonfont';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Simpsonfont SimpsonfontSimpsonfont'), url('simpsonfont.woff') format('woff');
+}
+
 :root {
     --color-blanco: antiquewhite;
     --color-naranja: rgb(207, 119, 18);
@@ -22,6 +29,11 @@ html {
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
+
+        h2,
+        h3 {
+            font-family: "Simpsonfont SimpsonfontSimpsonfont";
+        }
 
 
         header {
