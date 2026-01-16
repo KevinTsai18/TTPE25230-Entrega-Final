@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Simpsonfont SimpsonfontSimpsonfont';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Simpsonfont SimpsonfontSimpsonfont'), url('simpsonfont.woff') format('woff');
+}
+
+:root {
+    --color-blanco: antiquewhite;
+    --color-naranja: rgb(207, 119, 18);
+    --color-marron: rgb(114, 80, 7);
+    --color-amarillo: rgb(241, 212, 42);
+    --color-rojo: rgb(235, 34, 34);
+    --color-azul: rgb(23, 183, 247);
+    --color-verde: rgb(0, 255, 76);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+
+    body {
+        background-image: url("../assets/images/background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        h2,
+        h3 {
+            font-family: "Simpsonfont SimpsonfontSimpsonfont";
+        }
+
+
+        header {
+            .cabecera {
+                border-bottom: 1px solid black;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 2rem;
+
+                a #logo-icono {
+                    height: 100px;
+                    mix-blend-mode: multiply;
+
+                }
+
+                h1 {
+                    color: var(--color-rojo);
+                    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+                }
+            }
+        }
+
+        nav {
+            margin: 2rem auto;
+
+            ul {
+                display: flex;
+                list-style: none;
+                justify-content: center;
+
+                li {
+                    border: 1px solid black;
+
+                    background-color: var(--color-naranja);
+                    cursor: pointer;
+
+                    a {
+                        padding: 0.5rem 4rem;
+                        display: block;
+                        text-decoration: none;
+                        color: var(--color-blanco);
+                    }
+                }
+
+                li:hover {
+                    background-color: var(--color-blanco);
+
+                    a {
+                        color: var(--color-marron);
+                    }
+                }
+
+                li:first-child {
+                    border-bottom-left-radius: 1rem;
+                    border-top-left-radius: 1rem;
+                }
+
+                li:last-child {
+                    border-bottom-right-radius: 1rem;
+                    border-top-right-radius: 1rem;
+
+                    position: relative;
+
+                    .count {
+                        position: absolute;
+                        top: 0;
+                        right: 50px;
+                        border: 1px solid;
+                        border-radius: 5px;
+                        padding: 2px 5px;
+                        font-size: 12px;
+                        font-weight: bold;
+                        background-color: red;
+                        color: white;
+                    }
+                }
+
+
+            }
+        }
+
+        main {
+
+            background-repeat: no-repeat;
+            height: 20rem;
+            background-size: cover;
+
+            h2 {
+                padding-left: 2rem;
+                font-size: 50px;
+                position: absolute;
+                top: 45%;
+                color: var(--color-amarillo);
+                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+            }
+        }
+
+        #main-inicio {
+            background-image: url("../assets/images/kwik\ e\ mart\ local.jpg");
+            background-position: 0% 20%;
+        }
+
+        #main-productos {
+            background-image: url("../assets/images/productos\ kwik-e-mart.jfif");
+            background-position: 45%;
+        }
+
+        #main-resenias {
+            background-image: url("../assets/images/apu\ sad.JPG");
+            background-position: 0% 20%;
+        }
+
+        #main-contacto {
+            background-image: url("../assets/images/simpsons-moe.webp");
+            background-position: 0% 20%;
+        }
+
+        #main-carrito {
+            background-image: url("../assets/images/apu\ mostrador.JPG");
+            background-position: 0% 50%;
+        }
+
+        #itemProducts {
+            margin: 5% 3%;
+        }
+
+        #itemProducts .tabla-productos {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Encabezado */
+        .tabla-productos thead {
+            background: #ffcc00;
+            /* color Simpsons vibes */
+            color: #000;
+            font-weight: bold;
+        }
+
+        .tabla-productos thead th {
+            padding: 12px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        /* Celdas */
+        .tabla-productos td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Alternar colores */
+        .tabla-productos tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Hover */
+        .tabla-productos tbody tr:hover {
+            background: #f4f4f4;
+            transition: 0.2s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .tabla-productos thead {
+                display: none;
+                /* Oculta encabezado */
+            }
+
+            .tabla-productos tr {
+                display: block;
+                margin-bottom: 1rem;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+            }
+
+            .tabla-productos td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .tabla-productos td:last-child {
+                border-bottom: none;
+            }
+
+            .tabla-productos td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                color: #333;
+            }
+        }
+
+        .btn-eliminar {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn-eliminar:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    }
+
+    .container-principal {
+        background-color: var(--color-blanco);
+        width: 99.5%;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: ridge;
+        border-color: var(--color-azul);
+        text-align: center;
+        padding-bottom: 2rem;
+
+        h3 {
+            font-size: 25px;
+            color: var(--color-amarillo);
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+        }
+
+        .product {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+            gap: 1.5rem;
+            padding: 0 2rem;
+            justify-items: center;
+
+            .card {
+                border: 1px solid black;
+                width: 100%;
+                border-radius: 0.5rem;
+                background-color: var(--color-naranja);
+                box-shadow: 0 8px 4px gray;
+                padding: 0.5rem;
+                transition: all 0.3s ease-in-out;
+                transition: transform 0.3s ease-in-out,
+                    box-shadow 0.3s ease-in-out;
+
+                a {
+                    text-decoration: none;
+                    color: var(--color-marron);
+
+
+                    h4 {
+                        font-size: 1.2rem;
+                        margin: 0.5rem;
+                    }
+
+                    img {
+                        width: 100%;
+                        border-radius: 0.5rem;
+                        margin: 0.5rem auto;
+                    }
+
+                    p {
+                        span {
+                            font-weight: 700;
+                            padding: 0.25rem;
+                            background-color: wheat;
+                            border-radius: 0.25rem;
+                        }
+                    }
+                }
+
+                button {
+                    margin: 0.5rem;
+                    padding: 0.5rem 1rem;
+
+                    border-radius: 0.5rem;
+                    background-color: var(--color-blanco);
+                    color: var(--color-marron);
+                    cursor: pointer;
+                    font-weight: bolder;
+                    border-color: var(--color-verde);
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 8px 8px gray;
+
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+
+        form {
+            margin-right: 5rem;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 10px 20px;
+
+            label {
+                display: contents;
+                margin-bottom: 0.5rem;
+
+                input {
+                    min-width: 10rem;
+                }
+            }
+        }
+
+        .reviews {
+            .review-card {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
