@@ -246,6 +246,11 @@ html {
             transform: scale(1.1);
             opacity: 0.8;
         }
+
+        footer {
+            padding-top: 1rem;
+            background-color: cadetblue;
+        }
     }
 
     .container-principal {
@@ -358,4 +363,6 @@ html {
             }
         }
     }
+
+
 }

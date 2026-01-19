@@ -1,5 +1,5 @@
 @Autor Leonardo Kevin Tsai
-@Version: 1.2.0
+@Version: 1.2.1
 @Fecha: 202510092012
 
 @Actualización: 202601161120
